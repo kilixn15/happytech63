@@ -1,0 +1,31 @@
+Afin de mettre le site en maintenance : 
+
+--- objectif ---
+
+Le site ne doit plus affiché l'index mais un message de maintenance. 
+Plus personne sauf Nous deux doit avoir accès au site sur tout le long de la maintenance. 
+
+--- objectif ---
+Pour y parvenir il faut changé le fichier .htaccess qui se trouve a la racine du site (la ou se trouve l'index.php).
+Créer une copie du fichier .htaccess au cas ou ?
+
+
+Dans le fichier .htaccess :
+Modifier ceci : 
+ErrorDocument 404 /error/404.php
+ErrorDocument 403 /error/403.html
+ErrorDocument 500 /error/500.html
+
+Par ceci :
+ErrorDocument 404 /error/maintenance.html        #permet de changer ce que vois l'utilisateur quand il accèdera au site
+ErrorDocument 403 /error/maintenance.html
+ErrorDocument 500 /error/500.html
+
+Ajouter les lignes suivantes : 
+deny from all          #permet de bloquer tout le monde 
+allow from IPNICO      #Accés a nos IP
+allow from IPKILIAN
+
+
+
+Pour remettre les fonctions de base, refaire la meme chose mais à l'inverse. 

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <title> 
+            Formulaire
+        </title>
+        <meta charset="utf-8">
+        <meta name="description" content="Formulaire">
+    </head>
+    <body>
+        <h1>Premier formulaire</h1>
+        <input type="button" 
+                onclick="    /* Cet attribut indique ce qui se passe lors d'un clic */
+                       listeFieldsets = document.getElementsByTagName('fieldset'); 
+                             /* on sélectionne tous les fieldsets */
+                        for (x in listeFieldsets) { /* pour chaque fieldset */
+                                listeFieldsets[x].disabled = ! listeFieldsets[x].disabled;
+                             /* On ôte l'attribut */
+                        } "
+                value="Activer/Désactiver"/><br><br>
+        <form action="" method="post" enctype="multipart/form-data">
+            <fieldset disabled>
+                <legend>Paramètre du compte</legend>
+                <label for="login">Votre login :</label>
+                <input type="text" name="login" id="login" maxlength="30" placeholder="Saisissez votre  login" required autofocus><br>
+                <label for="mdp">Mot de passe :</label>
+                <input type="password" name="mdp" id="mdp" maxlength="30" placeholder="Saisissez votre mot de passe" required><br>
+                <label for="couleurFond">Couleur de fond :</label>
+                <input type="color" name="couleurFond" id="couleurFond"><br>
+                <label for="taillePolice">Taille de police :</label>
+                <input type="range" name="taillePolice" id="taillePolice">
+            </fieldset><br>
+            <fieldset disabled>
+                <legend>Identité</legend>
+                <label for="nom">Nom :</label>
+                <input type="text" name="nom" id="nom" maxlength="30" placeholder="Saisissez votre nom" required><br>
+                <label for="prenom">Prénom :</label>
+                <input type="text" name="prenom" id="prenom" maxlength="30" placeholder="Saisissez votre prénom" required><br>
+                <label for="dateNais">Date de naissance :</label>
+                <input type="date" name="dateNais" id="dateNais">
+                <label>Sexe :</label><br>
+                <input type="radio" name="genre" id="masculin" value="masculin">
+                <label for="masculin">Masculin</label>
+                <input type="radio" name="genre" id="feminin" value="feminin">
+                <label for="feminin">Féminin</label>
+                <input type="radio" name="genre" id="autre" value="autre">
+                <label for="autre">Autre</label>
+            </fieldset><br>
+            <fieldset disabled>
+                <legend>Coordonnées</legend>
+                <label for="num">Numéro :</label>
+                <input type="text" name="num" id="num" maxlength="10" placeholder="ex : 21" pattern="^{0}" required>
+                <label for="type">Type de voie :</label>
+                <input list="typ" name="type" id="type" maxlength="10" placeholder="Rue" required>
+                <datalist id="typ">
+                    <option value="Rue">
+                    <option value="Allée">
+                    <option value="Avenue">
+                    <option value="Boulevard">
+                    <option value="Chemin">
+                    <option value="Impasse">
+                    <option value="Place">
+                </datalist>
+                <label for="nomv">Nom de la voie :</label>
+                <input type="text" name="nomv" id="nomv" maxlength="30" placeholder="ex : du labrador" required><br>
+                <label for="cp">Code postal :</label>
+                <input type="text" name="cp" id="cp" maxlength="6" placeholder="99999" pattern="[0-9]{5}" required><br>
+                <label for="ville">Ville :</label>
+                <input type="text" name="ville" id="ville" maxlength="30" placeholder="ex : Clermont-Ferrand" required><br>
+                <label for="tel">Tél. mobile :</label>
+                <input type="text" name="tel" id="tel" maxlength="30" placeholder="0699999999" required><br>
+            </fieldset><br>
+            <fieldset disabled>
+                <legend>Contact</legend>
+                <label for="email">Courriel :</label>
+                <input type="text" name="email" id="email" maxlength="40" placeholder="ex : blaise.pascal@uca.fr"><br>
+                <label for="url">URL :</label>
+                <input type="text" name="url" id="url" maxlength="40" placeholder="ex : http://blaise.pascal.fr" pattern="https?://.+"><br>
+            </fieldset><br>
+            <fieldset disabled>
+                <legend>Message</legend>
+                <label for="msg">Saisissez votre texte :</label><br>
+                <textarea name="msg" id="msg" rows="10" cols="50" maxlength="500"> Message important !</textarea>
+            </fieldset><br>
+            <fieldset disabled>
+                <legend>Loisirs</legend>
+                <label for="lecture">Lecture :</label>
+                <input type="checkbox" name="loisirs[]" id="lecture">
+                <label for="sport">Sport :</label>
+                <input type="checkbox" name="loisirs[]" id="sport">
+                <label for="musique">Musique :</label>
+                <input type="checkbox" name="loisirs[]" id="musique">
+                <label for="photo">Photo :</label>
+                <input type="checkbox" name="loisirs[]" id="photo">
+                <label for="cinema">Cinéma :</label>
+                <input type="checkbox" name="loisirs[]" id="cinema">
+                <label for="aquariophilie">Aquariophilie :</label>
+                <input type="checkbox" name="loisirs[]" id="aquariophilie">
+                <label for="astronomie">Astronomie :</label>
+                <input type="checkbox" name="loisirs[]" id="astronomie"><br>
+                <label for="pays">Dernier pays visité :</label>
+                <select name="pays" id="pays">
+                    <optgroup label="Europe">
+                        <option value="france" selected>France</option>
+                        <option value="espagne">Espagne</option>
+                        <option value="italie">Italie</option>
+                        <option value="uk">Royaume-Unis</option>
+                    </optgroup>
+                    <optgroup label="Amérique">
+                        <option value="canada">Canada</option>
+                        <option value="us">Etats-Unis</option>
+                    </optgroup>
+                    <optgroup label="Asie">
+                        <option value="chine">Chine</option>
+                        <option value="japon">Japon</option>
+                    </optgroup>
+                </select>
+            </fieldset><br>
+            <input type="hidden" name="MAX_FILE_SIZE" value="300000">
+            <input type="file" name="fichier[]" id="fichier"><br><br>
+            <input type="submit" name="envoi">
+        </form>
+    </body>
+</html>

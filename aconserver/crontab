@@ -1,0 +1,23 @@
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,$
+# |  |  |  |  |
+# *  *  *  *  *  user command to be executed
+
+# Envoyer IP public toutes les 5 min à OVH et log dans /dev/null
+*/5 * * * * /usr/local/sbin/dyndns.sh > /dev/null 2>&1
+
+# Envoyer IP public toutes les 5 min à Cloudflare et log dans /dev/null
+*/5 * * * * /usr/local/sbin/Cloudflare-Public-Dynamic-IP-Update-master/cloudflare_dynamic_ip_update.bash > /dev/null 2>&1
+
+# Script de sauvegarde des logs tout les jours à minuit
+00 00 * * * /home/pi/Downloads/script_backup_logs.sh
+
+# Script de sauvegarde du site tout les lundi à 1h
+00 1 * * 1 /home/pi/Downloads/script_backup_rsync.sh
+
+# Redémarrage du rasp tout les dimanches à 3h
+00 3 * * 7 root reboot now

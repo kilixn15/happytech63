@@ -1,0 +1,9 @@
+Newsletter statut 
+0= Attente de validation
+1= OK 
+2= Suspendu 
+3= Supprimé
+4= bannis
+
+
+(obsolette ?)
