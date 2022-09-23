@@ -1,0 +1,5 @@
+User-agent: Yahoo! Slurp
+Disallow: /Bacasable/
+Disallow: /error/
+Disallow: /kilian/
+Disallow: /nico/

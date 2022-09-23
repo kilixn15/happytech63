@@ -1,0 +1,193 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  /*
+ set font size to this percentage so we can use rems more easily
+  EXAMPLE
+	font-size: 1.4rem;  this is equal to 14px
+	font-size: 2.4rem;  this is equal to 24px
+  */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+body {
+  font-size: 16px;
+  font-size: 1.6rem;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', sans-serif;
+  margin: 25px 60px 60px;
+}
+
+.progress-container {
+  padding-top: 30px;
+  padding-right: 43px;
+}
+
+/*Progress steps styles*/
+.progression-bar {
+  list-style: none;
+  margin: 0 0 38px 0;
+  padding: 0;
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  /*this classes are added to animate the progress bar*/
+  /*this classes are added to animate the progress bar*/
+}
+.progression-bar:before {
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
+  -webkit-transition: width .5s linear;
+  transition: width .5s linear;
+  content: "";
+  width: 20px;
+  background-color: #77b800;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 47%;
+  -webkit-transform: translateY(-47%);
+          transform: translateY(-47%);
+  z-index: 2;
+}
+.progression-bar:after {
+  -webkit-transition: width .9s ease-in-out;
+  transition: width .9s ease-in-out;
+  content: "";
+  width: 98%;
+  background-color: #e5e5e5;
+  height: 8px;
+  left: 9px;
+  position: absolute;
+  top: 47%;
+  will-change: transform;
+  -webkit-transform: translateY(-47%);
+          transform: translateY(-47%);
+  z-index: 1;
+}
+.progression-bar.step-2:before, .progression-bar.pre-pending:before {
+  width: 25%;
+}
+.progression-bar.step-3:before, .progression-bar.interview-complete:before {
+  width: 50%;
+}
+.progression-bar.step-4:before {
+  width: 74.5%;
+}
+.progression-bar.step-5:before, .progression-bar.post-sent:before {
+  width: 98%;
+}
+.progression-bar li {
+  display: -webkit-box;
+  display: flex;
+  position: relative;
+  height: 50px;
+  cursor: pointer;
+  flex-basis: 38px;
+}
+.progression-bar li:before {
+  content: "";
+  z-index: 6;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  will-change: transform;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-align: center;
+  display: block;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 5px solid #e5e5e5;
+  font-size: 18px;
+  line-height: 28px;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+}
+.progression-bar li:after {
+  will-change: opacity;
+  -webkit-transition: opacity .5s linear;
+  transition: opacity .5s linear;
+  opacity: 0;
+  content: "";
+  display: block;
+}
+.progression-bar li.is-pending:before {
+  border-color: #e8f22e;
+}
+.progression-bar li:last-child {
+  margin: 0;
+  background-color: white;
+}
+.progression-bar li.is-active, .progression-bar li:hover {
+  color: #77b800;
+  position: relative;
+}
+.progression-bar li.is-active:before, .progression-bar li:hover:before {
+  box-shadow: 0 0 6px 1px #cccccc;
+  border-color: #77b800;
+  content: "";
+  text-align: center;
+}
+.progression-bar li.is-active:after, .progression-bar li:hover:after {
+  content: "";
+  opacity: 1;
+  display: block;
+  width: 9px;
+  height: 18px;
+  border: solid #77b800;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 6;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
+.progression-bar li.is-active:before {
+  box-shadow: none;
+}
+.progression-bar li .progression-title,
+.progression-bar li .progression-date {
+  color: #656565;
+  position: absolute;
+  white-space: nowrap;
+}
+.progression-bar li .progression-title {
+  top: -24px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.progression-bar li .progression-date {
+  bottom: -24px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}

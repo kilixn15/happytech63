@@ -1,0 +1,28 @@
+    <div class="container">
+
+      <div class="copyright-wrap d-md-flex py-4">
+        <div class="mr-md-auto text-center text-md-left">
+          <div class="copyright">
+            &copy; 2020-<?php echo date("Y");?> Copyright <strong><span>HappyTech63</span></strong>. All Rights Reserved <br />
+              <?php
+              $fin = getmicrotime();
+              echo "Page générée en ".round($fin-$debut, 4) ." secondes.<br />";
+              ?>
+
+            </div>
+
+
+        </div>
+
+          <div class="social-links text-center text-md-right pt-3 pt-md-0">
+              <a href="https://twitter.com/htech63" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/HappyTech63/" target="_blank"  class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://bit.ly/Linkdin-nicolas" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.linkedin.com/in/kilian-duran-mascheix/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          </div>
+
+      </div>
+
+
+
+    </div>

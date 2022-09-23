@@ -1,0 +1,15 @@
+Options -Indexes
+
+#===================================
+# Bloquer une ip
+
+#Cette ip correspond a un site récupérant les codes sources
+deny from 45.55.21.112
+deny from 149.202.222.20
+deny from 206.81.4.148
+deny from 64.182.255.4
+deny from 192.240.172.33
+deny from 204.44.192.31
+deny from 104.255.216.93
+deny from 72.55.148.41
+deny from 72.10.193.84
